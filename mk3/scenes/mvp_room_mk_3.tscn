@@ -1,6 +1,7 @@
 [gd_scene load_steps=39 format=3 uid="uid://ykseerhqs6n"]
 
-[ext_resource type="Script" uid="uid://b22h33ci64rtv" path="res://mk1/scripts/xr_origin_3d.gd" id="1_4hebg"]
+[ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="1_f3bwr"]
+[ext_resource type="PackedScene" uid="uid://boi0uijc0jbug" path="res://mk3/scenes/player.tscn" id="2_nvm8q"]
 [ext_resource type="PackedScene" uid="uid://del0ydbbojq0w" path="res://mk3/Assets/EastWall.glb" id="2_slnam"]
 [ext_resource type="PackedScene" uid="uid://cjs5rxhsb3fma" path="res://mk3/Assets/SouthWall.glb" id="3_6dhh1"]
 [ext_resource type="PackedScene" uid="uid://28h7d886g6gt" path="res://mk3/Assets/WestWall.glb" id="4_xek0q"]
@@ -164,20 +165,12 @@ _data = {
 &"spinning_fan": SubResource("Animation_jgge3")
 }
 
-[sub_resource type="Environment" id="Environment_onqup"]
-ambient_light_source = 3
-ambient_light_color = Color(0.92399985, 0.72214967, 0.46161783, 1)
-ambient_light_energy = 2.04
-
 [node name="MVP_Room_MK3" type="Node3D"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 
-[node name="XROrigin3D" type="XROrigin3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.57383144, 0.10808462, 0.4980916)
-script = ExtResource("1_4hebg")
+[node name="StartXR" parent="." instance=ExtResource("1_f3bwr")]
 
-[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
-current = true
+[node name="XROrigin3D" parent="." instance=ExtResource("2_nvm8q")]
 
 [node name="Room" type="Node3D" parent="."]
 transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 0, 0, 0)
@@ -332,9 +325,6 @@ transform = Transform3D(-0.5395975, 0, -0.5758952, 0, 0.85746133, 0, 0.6812665, 
 
 [node name="picture" parent="Room/Furniture" instance=ExtResource("28_f3wwu")]
 transform = Transform3D(3.1720655e-15, 0.97679573, -0.21417283, 0.99999994, 9.361793e-09, 4.2697096e-08, 4.3711385e-08, -0.21417283, -0.97679573, 47.905807, 10.246179, 19.106775)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_onqup")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1.4304006, 0, 0, 0, 0.9794346, 0.3585061, 0, -0.20176174, 1.7403364, 4.906649, 11.725357, 29.916685)
