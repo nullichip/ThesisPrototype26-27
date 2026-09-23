@@ -1,10 +1,8 @@
-[gd_scene load_steps=43 format=3 uid="uid://ykseerhqs6n"]
+[gd_scene load_steps=39 format=3 uid="uid://ykseerhqs6n"]
 
 [ext_resource type="Script" uid="uid://b22h33ci64rtv" path="res://mk1/scripts/xr_origin_3d.gd" id="1_4hebg"]
-[ext_resource type="PackedScene" uid="uid://njx823gyk04n" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_hand.tscn" id="2_nvm8q"]
 [ext_resource type="PackedScene" uid="uid://del0ydbbojq0w" path="res://mk3/Assets/EastWall.glb" id="2_slnam"]
 [ext_resource type="PackedScene" uid="uid://cjs5rxhsb3fma" path="res://mk3/Assets/SouthWall.glb" id="3_6dhh1"]
-[ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="3_sdct3"]
 [ext_resource type="PackedScene" uid="uid://28h7d886g6gt" path="res://mk3/Assets/WestWall.glb" id="4_xek0q"]
 [ext_resource type="Texture2D" uid="uid://cmbsdbw44ttyw" path="res://mk2/Thesis/outside.jpg" id="5_648ke"]
 [ext_resource type="PackedScene" uid="uid://ibg3wju36adg" path="res://mk3/Assets/Floor.glb" id="6_emwh5"]
@@ -28,12 +26,6 @@
 [ext_resource type="PackedScene" uid="uid://t64dlty5d7jv" path="res://mk3/Assets/lipstick.glb" id="24_568wt"]
 [ext_resource type="PackedScene" uid="uid://bjmaq12e1d76h" path="res://mk3/Assets/blush.glb" id="25_ayqqw"]
 [ext_resource type="PackedScene" uid="uid://dwh2mmm3mbq6b" path="res://mk3/Assets/picture.glb" id="28_f3wwu"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_32fd2"]
-radius = 0.07
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_2qpxy"]
-radius = 0.07
 
 [sub_resource type="BoxMesh" id="BoxMesh_i0ye6"]
 
@@ -98,10 +90,10 @@ tracks/1/path = NodePath("Room/Furniture/flowers:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(11.420684, -4.996635, -3.254106), Vector3(11.444559, -4.996635, -3.254106)]
+"values": [Vector3(21.207623, -10.119248, -6.4822025)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_33ue8"]
@@ -151,7 +143,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(16.02298, 14.123774, 4.59865)]
+"values": [Vector3(16.02298, 28.191246, 4.5986514)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -187,33 +179,11 @@ script = ExtResource("1_4hebg")
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
 current = true
 
-[node name="LeftController" type="XRController3D" parent="XROrigin3D"]
-tracker = &"left_hand"
-
-[node name="LeftHand" parent="XROrigin3D/LeftController" instance=ExtResource("2_nvm8q")]
-
-[node name="LeftHandArea" type="Area3D" parent="XROrigin3D/LeftController"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/LeftController/LeftHandArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.004, 0)
-shape = SubResource("SphereShape3D_32fd2")
-
-[node name="RightController" type="XRController3D" parent="XROrigin3D"]
-tracker = &"right_hand"
-
-[node name="RightHand" parent="XROrigin3D/RightController" instance=ExtResource("3_sdct3")]
-
-[node name="RightHandArea" type="Area3D" parent="XROrigin3D/RightController"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/RightController/RightHandArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0037258863, 0)
-shape = SubResource("SphereShape3D_2qpxy")
-
 [node name="Room" type="Node3D" parent="."]
 transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 0, 0, 0)
 
 [node name="EastWall" parent="Room" instance=ExtResource("2_slnam")]
-transform = Transform3D(0.3, 0, 0, 0, 0.37679255, 0, 0, 0, 0.40594435, -4.3144283, 0.11365611, 8.767481)
+transform = Transform3D(0.3, 0, 0, 0, 0.37679255, 0, 0, 0, 0.40594435, -4.3144283, 0.17453374, 8.767481)
 
 [node name="SouthWall" parent="Room" instance=ExtResource("3_6dhh1")]
 transform = Transform3D(-1.4031356e-08, 0, -0.387, 0, 0.377, 0, 0.321, 0, -1.6916307e-08, 24.099247, -0.17658152, -13.968944)
@@ -324,7 +294,7 @@ autoplay = "swaying_shirt_leaves"
 transform = Transform3D(-5.7351153e-06, -0.0018666082, -0.40825582, 0.001094008, 0.3564926, -0.002137642, -0.15670687, 0.0024888287, 1.7845428e-08, 23.936504, 1.5366948, -8.364231)
 
 [node name="bed" parent="Room/Furniture" instance=ExtResource("17_7gd4h")]
-transform = Transform3D(2.3315136, 0, 0, 0, 2.540541, 0, 0, 0, 2.7519076, 37.893227, 5.655368, -3.434473)
+transform = Transform3D(2.3315136, 0, 0, 0, 2.540541, 0, 0, 0, 2.7519076, 37.893227, 5.655368, -1.4929755)
 
 [node name="fan" parent="Room/Furniture" instance=ExtResource("18_8rfqm")]
 transform = Transform3D(-0.40462723, 0, 0, 0, 0.5394642, -3.1873114e-08, 0, 4.7161457e-08, 0.3645859, 16.02298, 14.123774, 4.59865)
