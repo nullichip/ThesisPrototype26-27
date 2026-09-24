@@ -66,7 +66,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(11.420684, -4.996635, -3.254106)]
+"values": [Vector3(21.208, -10.119, -6.482)]
 }
 
 [sub_resource type="Animation" id="Animation_vexpp"]
@@ -171,7 +171,7 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 [node name="StartXR" parent="." instance=ExtResource("1_f3bwr")]
 
 [node name="XROrigin3D" parent="." instance=ExtResource("2_nvm8q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09557209, 1)
 
 [node name="Room" type="Node3D" parent="."]
 transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 0, 0, 0)
@@ -275,7 +275,7 @@ transform = Transform3D(-1.7484554e-08, 0, 0.39999998, 0, 0.39999998, 0, -0.3999
 transform = Transform3D(-1.1011731e-07, 0, 2.3234348, 0, 2.4376812, 0, -2.5191905, 0, -1.0156055e-07, 34.23717, 10.173337, 34.73216)
 
 [node name="flowers" parent="Room/Furniture" instance=ExtResource("15_sdct3")]
-transform = Transform3D(-8.370319e-09, 0, 0.4229058, 0, 0.55626106, 0, -0.19149058, 0, -1.84858e-08, 11.420684, -4.996635, -3.254106)
+transform = Transform3D(-8.370319e-09, 0, 0.4229058, 0, 0.55626106, 0, -0.19149058, 0, -1.84858e-08, 21.208, -10.119, -6.482)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Room/Furniture/flowers"]
 root_node = NodePath("../../../..")
