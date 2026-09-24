@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://ykseerhqs6n"]
+[gd_scene load_steps=40 format=3 uid="uid://ykseerhqs6n"]
 
 [ext_resource type="PackedScene" uid="uid://del0ydbbojq0w" path="res://mk3/Assets/EastWall.glb" id="2_slnam"]
 [ext_resource type="PackedScene" uid="uid://cjs5rxhsb3fma" path="res://mk3/Assets/SouthWall.glb" id="3_6dhh1"]
@@ -163,6 +163,20 @@ _data = {
 &"spinning_fan": SubResource("Animation_jgge3")
 }
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bg6d3"]
+sky_top_color = Color(0.798533, 0.64970046, 0.26592392, 1)
+sky_horizon_color = Color(1.1338272, 1.0833141, 0.97242624, 1)
+ground_bottom_color = Color(0.39516994, 0.34194964, 0.2821749, 1)
+ground_horizon_color = Color(1.1338272, 1.0833141, 0.97242624, 1)
+energy_multiplier = 1.1
+
+[sub_resource type="Sky" id="Sky_2btxs"]
+sky_material = SubResource("ProceduralSkyMaterial_bg6d3")
+
+[sub_resource type="Environment" id="Environment_f3bwr"]
+background_mode = 2
+sky = SubResource("Sky_2btxs")
+
 [node name="MVP_Room_MK3" type="Node3D"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 
@@ -320,5 +334,11 @@ transform = Transform3D(-0.5395975, 0, -0.5758952, 0, 0.85746133, 0, 0.6812665, 
 [node name="picture" parent="Room/Furniture" instance=ExtResource("28_f3wwu")]
 transform = Transform3D(3.1720655e-15, 0.97679573, -0.21417283, 0.99999994, 9.361793e-09, 4.2697096e-08, 4.3711385e-08, -0.21417283, -0.97679573, 47.905807, 10.246179, 19.106775)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1.4304006, 0, 0, 0, 0.9794346, 0.3585061, 0, -0.20176174, 1.7403364, 4.906649, 11.725357, 29.916685)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Room/Furniture"]
+transform = Transform3D(27.517025, -36.768368, -12.588624, 0, 15.424636, -45.051678, 38.86369, 26.033457, 8.913242, 0, 0, 0)
+light_color = Color(1, 0.68235296, 0.3137255, 1)
+shadow_enabled = true
+directional_shadow_max_distance = 510.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Room/Furniture"]
+environment = SubResource("Environment_f3bwr")

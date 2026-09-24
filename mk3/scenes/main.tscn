@@ -1,23 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c1laxjleit6of"]
+[gd_scene load_steps=5 format=3 uid="uid://c1laxjleit6of"]
 
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="1_ldsd8"]
 [ext_resource type="PackedScene" uid="uid://boi0uijc0jbug" path="res://mk3/scenes/player.tscn" id="2_vf2d7"]
 [ext_resource type="PackedScene" uid="uid://ykseerhqs6n" path="res://mk3/scenes/mvp_room_mk_3.tscn" id="3_vf2d7"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ldsd8"]
-sky_top_color = Color(0.6755587, 0.66130614, 0.28653264, 1)
-sky_horizon_color = Color(1.0894551, 1.072587, 0.9639499, 1)
-ground_bottom_color = Color(0.39516994, 0.34194964, 0.2821749, 1)
-ground_horizon_color = Color(1.0894551, 1.072587, 0.9639499, 1)
-energy_multiplier = 1.25
-
-[sub_resource type="Sky" id="Sky_vf2d7"]
-sky_material = SubResource("ProceduralSkyMaterial_ldsd8")
-
-[sub_resource type="Environment" id="Environment_7c88i"]
-background_mode = 2
-sky = SubResource("Sky_vf2d7")
-glow_enabled = true
+[sub_resource type="CylinderMesh" id="CylinderMesh_vf2d7"]
 
 [node name="Main" type="Node3D"]
 
@@ -27,11 +14,8 @@ glow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1619072, 0.074626565, 0)
 
 [node name="MVP_Room_MK3" parent="." instance=ExtResource("3_vf2d7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.58212286, -0.81250155, 0.031213183, 0, 0.03838784, 0.9992629, -0.8131008, 0.5816938, -0.022346439, 0, 0, 0)
-shadow_enabled = true
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_7c88i")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.91584015, 1.0860715, 0)
+mesh = SubResource("CylinderMesh_vf2d7")
