@@ -1,7 +1,5 @@
-[gd_scene load_steps=39 format=3 uid="uid://ykseerhqs6n"]
+[gd_scene load_steps=37 format=3 uid="uid://ykseerhqs6n"]
 
-[ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="1_f3bwr"]
-[ext_resource type="PackedScene" uid="uid://c1laxjleit6of" path="res://mk3/scenes/main.tscn" id="2_f3bwr"]
 [ext_resource type="PackedScene" uid="uid://del0ydbbojq0w" path="res://mk3/Assets/EastWall.glb" id="2_slnam"]
 [ext_resource type="PackedScene" uid="uid://cjs5rxhsb3fma" path="res://mk3/Assets/SouthWall.glb" id="3_6dhh1"]
 [ext_resource type="PackedScene" uid="uid://28h7d886g6gt" path="res://mk3/Assets/WestWall.glb" id="4_xek0q"]
@@ -167,11 +165,6 @@ _data = {
 
 [node name="MVP_Room_MK3" type="Node3D"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
-
-[node name="StartXR" parent="." instance=ExtResource("1_f3bwr")]
-
-[node name="Main" parent="." instance=ExtResource("2_f3bwr")]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0.31968033, 0.10496442, 0)
 
 [node name="Room" type="Node3D" parent="."]
 transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 0, 0, 0)
