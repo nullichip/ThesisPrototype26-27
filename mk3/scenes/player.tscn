@@ -46,7 +46,6 @@ transform = Transform3D(0.2808013, 0, 0, 0, 0.76637673, 0, 0, 0, 1.1840576, 0, 0
 shape = SubResource("SphereShape3D_xficr")
 
 [node name="MovementTurn" parent="RightHand" instance=ExtResource("4_4ixdo")]
-turn_mode = 1
-step_turn_angle = 45.0
+step_turn_angle = 30.0
 
 [node name="PlayerBody" parent="." instance=ExtResource("4_ubqr3")]

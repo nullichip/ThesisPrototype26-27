@@ -13,8 +13,8 @@ freeze_mode = 1
 script = ExtResource("1_4r41u")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8494214, -0.22507286, -0.33434367)
+transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, -0.8494214, -0.22507286, -0.33434367)
 shape = SubResource("BoxShape3D_l2yo4")
 
 [node name="tokyo aliens manga" parent="." instance=ExtResource("2_crual")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8709134, -0.20971274, -0.37107182)
+transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, -0.8709134, -0.20971274, -0.37107182)
