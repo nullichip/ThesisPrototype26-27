@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://nu8b407rewx5" path="res://mk3/scenes/tokyoaliens_manga.tscn" id="4_ci4rh"]
 [ext_resource type="PackedScene" uid="uid://dfj0hqvi7rrk1" path="res://mk3/scenes/mha_manga.tscn" id="5_k3r4r"]
 [ext_resource type="PackedScene" uid="uid://bngpi67fli8d5" path="res://mk3/scenes/lotion.tscn" id="6_d2f76"]
-[ext_resource type="PackedScene" uid="uid://c168e8ddgpxga" path="res://mk3/scenes/VANITY_DRAWER.tscn" id="7_k3r4r"]
+[ext_resource type="PackedScene" uid="uid://b8frbm82d736n" path="res://mk3/scenes/CHAIR.tscn" id="7_k3r4r"]
 
 [node name="Main" type="Node3D"]
 
@@ -27,7 +27,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17178184, 2.0145605, 0.548
 [node name="LOTION" parent="." instance=ExtResource("6_d2f76")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0157695, 1.3307878, 3.1741102)
 
-[node name="VANITY DRAWER" parent="." instance=ExtResource("7_k3r4r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2015482, 0.8180067, 3.0442915)
-slider_limit_max = 0.3
-default_on_release = false
+[node name="CHAIR" parent="." instance=ExtResource("7_k3r4r")]
+transform = Transform3D(0.9479686, 0, -0.31836376, 0, 1, 0, 0.31836376, 0, 0.9479686, 0.5619836, 1.1283522, 2.380888)

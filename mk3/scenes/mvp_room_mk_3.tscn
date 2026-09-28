@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://ykseerhqs6n"]
+[gd_scene load_steps=45 format=3 uid="uid://ykseerhqs6n"]
 
 [ext_resource type="PackedScene" uid="uid://del0ydbbojq0w" path="res://mk3/Assets/EastWall.glb" id="2_slnam"]
 [ext_resource type="PackedScene" uid="uid://cjs5rxhsb3fma" path="res://mk3/Assets/SouthWall.glb" id="3_6dhh1"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cmbsdbw44ttyw" path="res://mk2/Thesis/outside.jpg" id="5_648ke"]
 [ext_resource type="PackedScene" uid="uid://ibg3wju36adg" path="res://mk3/Assets/Floor.glb" id="6_emwh5"]
 [ext_resource type="PackedScene" uid="uid://bj01hcun2a86b" path="res://mk3/Assets/Ceiling.glb" id="7_0kg1k"]
+[ext_resource type="PackedScene" uid="uid://c4o6p8w1l6t2n" path="res://mk3/Assets/vanity_drawer.glb" id="7_klknt"]
 [ext_resource type="PackedScene" uid="uid://cbc46ylerikfq" path="res://mk3/Assets/books.glb" id="8_bg6d3"]
 [ext_resource type="PackedScene" uid="uid://5ihmiu4sdbpr" path="res://mk3/Assets/manga_shelf1.glb" id="8_pcrlg"]
 [ext_resource type="PackedScene" uid="uid://dlv03tibeegdc" path="res://mk3/Assets/collage.glb" id="9_klknt"]
@@ -202,6 +203,9 @@ size = Vector3(0.5302124, 0.030899048, 0.8959961)
 [sub_resource type="BoxShape3D" id="BoxShape3D_klknt"]
 size = Vector3(0.8915405, 0.039489746, 0.6953125)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_hvf11"]
+size = Vector3(0.33364868, 0.08734131, 0.6131592)
+
 [node name="MVP_Room_MK3" type="Node3D"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 
@@ -314,6 +318,9 @@ transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 47.11
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 90.67282, 0, 90.15055)
 
 [node name="Furniture" type="Node3D" parent="Room"]
+
+[node name="vanity_drawer" parent="Room/Furniture" instance=ExtResource("7_klknt")]
+transform = Transform3D(-2.4041265e-07, 0, 5.5, 0, 5.5, 0, -5.5, 0, -2.4041265e-07, 12.847618, 8.732241, 31.147697)
 
 [node name="desk" parent="Room/Furniture" instance=ExtResource("10_f3bwr")]
 transform = Transform3D(-3.5388896, 0, 0.07108839, 0, 3.206921, 0, -0.087477125, 0, -2.8758836, 55.843254, 13.286562, 26.76658)
@@ -457,3 +464,7 @@ shape = SubResource("BoxShape3D_pcrlg")
 [node name="CollisionShape3D21" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.9777038, 0.69679415, 2.612374)
 shape = SubResource("BoxShape3D_klknt")
+
+[node name="CollisionShape3D22" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.97685647, 0.6396496, 2.4180012)
+shape = SubResource("BoxShape3D_hvf11")

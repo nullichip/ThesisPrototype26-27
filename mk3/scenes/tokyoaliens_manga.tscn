@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="4_mmbfx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gpbra"]
-size = Vector3(0.03202474, 0.26323897, 0.16998406)
+size = Vector3(0.022082113, 0.26589683, 0.17359953)
 
 [node name="TOKYOALIENS_MANGA" type="RigidBody3D"]
 collision_layer = 4
@@ -15,7 +15,7 @@ freeze_mode = 1
 script = ExtResource("1_4r41u")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0063815415, 0.0014447272, 0.0018943325)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0008374937, 0.00011579692, 8.65981e-05)
 shape = SubResource("BoxShape3D_gpbra")
 
 [node name="tokyo aliens manga" parent="." instance=ExtResource("2_crual")]
