@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://boi0uijc0jbug"]
+[gd_scene load_steps=12 format=3 uid="uid://boi0uijc0jbug"]
 
 [ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="1_ylqe1"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="2_4ixdo"]
@@ -11,8 +11,14 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_03bhy"]
 radius = 0.039533343
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_a3onm"]
+radius = 0.052635927
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_xficr"]
 radius = 0.053978834
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qkm1o"]
+radius = 0.06295934
 
 [node name="XROrigin3D" type="XROrigin3D"]
 
@@ -38,6 +44,12 @@ strafe = true
 
 [node name="MovementCrouch" parent="LeftHand" instance=ExtResource("4_a3onm")]
 
+[node name="Area3D" type="Area3D" parent="LeftHand" groups=["player_hands"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LeftHand/Area3D"]
+transform = Transform3D(0.33307385, 0, 0, 0, 1.0250142, 0, 0, 0, 1.3290343, 0, 0, 0.011549128)
+shape = SubResource("SphereShape3D_a3onm")
+
 [node name="RightHand" type="XRController3D" parent="."]
 tracker = &"right_hand"
 
@@ -56,5 +68,11 @@ shape = SubResource("SphereShape3D_xficr")
 [node name="MovementTurn" parent="RightHand" instance=ExtResource("4_4ixdo")]
 order = 10
 turn_mode = 2
+
+[node name="Area3D" type="Area3D" parent="RightHand" groups=["player_hands"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RightHand/Area3D"]
+transform = Transform3D(0.43587488, 0, 0, 0, 0.8260508, 0, 0, 0, 1, 0.009665482, 0, 0.019295901)
+shape = SubResource("SphereShape3D_qkm1o")
 
 [node name="PlayerBody" parent="." instance=ExtResource("4_ubqr3")]

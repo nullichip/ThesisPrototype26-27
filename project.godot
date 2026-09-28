@@ -28,6 +28,10 @@ XRToolsRumbleManager="*res://addons/godot-xr-tools/rumble/rumble_manager.gd"
 
 enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg")
 
+[global_group]
+
+player_hands=""
+
 [layer_names]
 
 3d_physics/layer_1="Environment"
