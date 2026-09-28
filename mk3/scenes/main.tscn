@@ -18,10 +18,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.83932495, 0.098401785, 0)
 transform = Transform3D(1.35, 0, 0, 0, 1.35, 0, 0, 0, 1.35, 0, 0, 0)
 
 [node name="TOKYOALIENS_MANGA" parent="." instance=ExtResource("4_ci4rh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.684561, 2.5500944, 0.585817)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17580241, 2.3786685, 0.2126823)
 
 [node name="MHA_MANGA" parent="." instance=ExtResource("5_k3r4r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.69455993, 2.008876, 1.3128985)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17178184, 2.0145605, 0.54860014)
 
 [node name="LOTION" parent="." instance=ExtResource("6_d2f76")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0157695, 1.3307878, 3.1741102)
