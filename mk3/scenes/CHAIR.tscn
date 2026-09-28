@@ -1,12 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8frbm82d736n"]
+[gd_scene load_steps=8 format=3 uid="uid://b8frbm82d736n"]
 
 [ext_resource type="PackedScene" uid="uid://t8i3npphynpa" path="res://mk3/Assets/chair.glb" id="1_frnl7"]
+[ext_resource type="PackedScene" uid="uid://djav6lgyk27lk" path="res://addons/godot-xr-tools/objects/pickable_object.tscn" id="2_o00xr"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="3_fnfet"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="4_y4k2j"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0j5wt"]
 radius = 0.57758194
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_cipr6"]
 radius = 0.40368864
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rgyq8"]
+size = Vector3(0.3890381, 1.2036133, 0.7404175)
 
 [node name="CHAIR" type="RigidBody3D"]
 axis_lock_linear_y = true
@@ -16,14 +22,27 @@ axis_lock_angular_z = true
 [node name="chair" parent="." instance=ExtResource("1_frnl7")]
 transform = Transform3D(0.105, 0, 0, 0, 0.105, 0, 0, 0, 0.10428789, 0, 0, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.23296659, 0.055984955, 0, -0.014587619, 0.89408857, 0, 0, 0, 0.762032, 0.058204174, -0.06428851, 0)
 shape = SubResource("SphereShape3D_0j5wt")
 debug_color = Color(0, 0.6, 0.69803923, 0.7921569)
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.9041038, 0, 0, 0, 0.26139402, 0, 0, 0, 0.89811707, 0.29309285, -0.4803918, -0.038258974)
 shape = SubResource("SphereShape3D_cipr6")
 debug_color = Color(0, 0.6, 0.69803923, 0.8901961)
+
+[node name="pickable_object" parent="." instance=ExtResource("2_o00xr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.35221732)
+
+[node name="CollisionShape3D" parent="pickable_object" index="0"]
+transform = Transform3D(1.9000001, 0, 0, 0, 1.1407683, 0, 0, 0, 0.91487575, 0.23913133, -0.3328554, -0.38122568)
+shape = SubResource("BoxShape3D_rgyq8")
+
+[node name="GrabPointHandLeft" parent="pickable_object" instance=ExtResource("3_fnfet")]
+transform = Transform3D(-0.19506624, -0.17010722, -0.9659259, -0.6572437, 0.7536781, -1.4901161e-08, 0.7279971, 0.6348487, -0.25881904, 0.114315495, 0.33348063, -0.495544)
+
+[node name="GrabPointHandRight" parent="pickable_object" instance=ExtResource("4_y4k2j")]
+transform = Transform3D(0.37024698, -0.503459, -0.78067046, 0.8056079, 0.5924491, 1.4901161e-08, 0.46250752, -0.62891424, 0.62494296, 0.09581644, 0.3295532, -0.31396607)
+
+[editable path="pickable_object"]
