@@ -1,10 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://bngpi67fli8d5"]
+[gd_scene load_steps=9 format=3 uid="uid://bngpi67fli8d5"]
 
 [ext_resource type="Script" uid="uid://bfrlpbsqg5lqr" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_o881w"]
 [ext_resource type="PackedScene" uid="uid://cnl6ie3mslx2e" path="res://mk3/Assets/lotion.glb" id="2_j2wuv"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="3_5wh7j"]
+[ext_resource type="Script" uid="uid://dvobm6vcfnqe8" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="4_wenaw"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="5_6twyr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x7guy"]
 size = Vector3(0.4885254, 1.1075745, 0.29466248)
+
+[sub_resource type="Resource" id="Resource_f7770"]
+script = ExtResource("4_wenaw")
+metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
+
+[sub_resource type="Resource" id="Resource_aokjr"]
+script = ExtResource("4_wenaw")
+metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
 
 [node name="LOTION" type="RigidBody3D"]
 collision_layer = 4
@@ -18,3 +29,14 @@ shape = SubResource("BoxShape3D_x7guy")
 
 [node name="lotion" parent="." instance=ExtResource("2_j2wuv")]
 transform = Transform3D(-1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="GrabPointHandLeft" parent="." instance=ExtResource("3_5wh7j")]
+transform = Transform3D(0.92308944, 0, -0.38458535, 0, 1, 0, 0.38458535, 0, 0.92308944, -0.071448185, -0.17962602, -0.031221256)
+snap_hand = false
+hand_pose = SubResource("Resource_f7770")
+editor_preview_mode = 1
+
+[node name="GrabPointHandRight" parent="." instance=ExtResource("5_6twyr")]
+transform = Transform3D(0.97204304, 0, 0.23480281, 0, 1, 0, -0.23480281, 0, 0.97204304, 0.007804756, -0.17928918, -0.04451266)
+hand_pose = SubResource("Resource_aokjr")
+editor_preview_mode = 1
