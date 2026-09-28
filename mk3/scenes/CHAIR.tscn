@@ -1,43 +1,39 @@
 [gd_scene load_steps=8 format=3 uid="uid://b8frbm82d736n"]
 
+[ext_resource type="Script" uid="uid://bfrlpbsqg5lqr" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_fnfet"]
 [ext_resource type="PackedScene" uid="uid://t8i3npphynpa" path="res://mk3/Assets/chair.glb" id="1_frnl7"]
-[ext_resource type="PackedScene" uid="uid://djav6lgyk27lk" path="res://addons/godot-xr-tools/objects/pickable_object.tscn" id="2_o00xr"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="3_fnfet"]
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="4_y4k2j"]
 [ext_resource type="Script" uid="uid://c1poqtfnixp0f" path="res://mk1/scripts/interactive_items.gd" id="5_fnfet"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_rgyq8"]
-size = Vector3(0.34832764, 1.2036133, 0.7404175)
+[sub_resource type="BoxShape3D" id="BoxShape3D_fnfet"]
+size = Vector3(0.6606293, 1.3986816, 0.73376465)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y4k2j"]
-size = Vector3(0.66279984, 1.3742371, 0.6781616)
+size = Vector3(0.65141034, 1.3997073, 0.73833466)
 
 [node name="CHAIR" type="RigidBody3D"]
-axis_lock_linear_y = true
-axis_lock_angular_x = true
-axis_lock_angular_z = true
+collision_layer = 4
+collision_mask = 196615
+freeze_mode = 1
+script = ExtResource("1_fnfet")
 
 [node name="chair" parent="." instance=ExtResource("1_frnl7")]
-transform = Transform3D(0.105, 0, 0, 0, 0.105, 0, 0, 0, 0.10428789, 0, 0, 0)
+transform = Transform3D(0.105, 0, 0, 0, 0.105, 0, 0, 0, 0.10428789, -0.8494214, -0.22507286, -0.33434367)
 
-[node name="pickable_object" parent="." instance=ExtResource("2_o00xr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.35221732)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.56746185, -0.5506344, -0.36273408)
+shape = SubResource("BoxShape3D_fnfet")
 
-[node name="CollisionShape3D" parent="pickable_object" index="0"]
-transform = Transform3D(1.9000001, 0, 0, 0, 1.1407683, 0, 0, 0, 0.91487575, 0.27780625, -0.3328554, -0.38122568)
-shape = SubResource("BoxShape3D_rgyq8")
+[node name="GrabPointHandLeft" parent="." instance=ExtResource("3_fnfet")]
+transform = Transform3D(-0.19506624, -0.17010722, -0.9659259, -0.6572437, 0.7536781, -1.4901161e-08, 0.7279971, 0.6348487, -0.25881904, -0.74301606, 0.08511149, -0.49617475)
 
-[node name="GrabPointHandLeft" parent="pickable_object" instance=ExtResource("3_fnfet")]
-transform = Transform3D(-0.19506624, -0.17010722, -0.9659259, -0.6572437, 0.7536781, -1.4901161e-08, 0.7279971, 0.6348487, -0.25881904, 0.114315495, 0.33348063, -0.495544)
-
-[node name="GrabPointHandRight" parent="pickable_object" instance=ExtResource("4_y4k2j")]
-transform = Transform3D(0.37024698, -0.503459, -0.78067046, 0.8056079, 0.5924491, 1.4901161e-08, 0.46250752, -0.62891424, 0.62494296, 0.09581644, 0.3295532, -0.31396607)
+[node name="GrabPointHandRight" parent="." instance=ExtResource("4_y4k2j")]
+transform = Transform3D(0.1359414, -0.25023562, -0.95859396, 0.62725157, 0.7706879, -0.11223124, 0.76686096, -0.5860226, 0.26172912, -0.73659116, 0.09248655, -0.21980372)
 
 [node name="Area3D" type="Area3D" parent="."]
 script = ExtResource("5_fnfet")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2749462, -0.33415222, -0.031585693)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5655506, -0.55300117, -0.3644423)
 shape = SubResource("BoxShape3D_y4k2j")
-
-[editable path="pickable_object"]
