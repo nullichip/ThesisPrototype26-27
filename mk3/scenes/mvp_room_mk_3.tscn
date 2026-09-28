@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://ykseerhqs6n"]
+[gd_scene load_steps=43 format=3 uid="uid://ykseerhqs6n"]
 
 [ext_resource type="PackedScene" uid="uid://del0ydbbojq0w" path="res://mk3/Assets/EastWall.glb" id="2_slnam"]
 [ext_resource type="PackedScene" uid="uid://cjs5rxhsb3fma" path="res://mk3/Assets/SouthWall.glb" id="3_6dhh1"]
@@ -182,7 +182,7 @@ size = Vector3(1.015625, 0.84173584, 1.3637695)
 size = Vector3(0.3199005, 2.4805908, 0.93066406)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sdct3"]
-size = Vector3(0.87939453, 1, 0.39501953)
+size = Vector3(0.87939453, 0.85046387, 0.39501953)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f3wwu"]
 size = Vector3(0.4005127, 0.88668823, 0.10232544)
@@ -198,6 +198,9 @@ size = Vector3(2.3132324, 0.90130615, 1.7613525)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pcrlg"]
 size = Vector3(0.5302124, 0.030899048, 0.8959961)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_klknt"]
+size = Vector3(0.8915405, 0.039489746, 0.6953125)
 
 [node name="MVP_Room_MK3" type="Node3D"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
@@ -412,7 +415,7 @@ transform = Transform3D(0.8682939, 0, -0.49604958, 0, 0.99999976, 0, 0.49604958,
 shape = SubResource("BoxShape3D_nvm8q")
 
 [node name="CollisionShape3D11" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.979294, 0.2356043, 2.4431758)
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.979294, 0.16083623, 2.4431758)
 shape = SubResource("BoxShape3D_sdct3")
 
 [node name="CollisionShape3D12" type="CollisionShape3D" parent="StaticBody3D"]
@@ -450,3 +453,7 @@ shape = SubResource("BoxShape3D_pcrlg")
 [node name="CollisionShape3D20" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.3380427, 0.5395749, 0.12890619)
 shape = SubResource("BoxShape3D_pcrlg")
+
+[node name="CollisionShape3D21" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.9777038, 0.69679415, 2.612374)
+shape = SubResource("BoxShape3D_klknt")

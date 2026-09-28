@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://c168e8ddgpxga"]
+
+[ext_resource type="Script" uid="uid://cloxfr8r3b00u" path="res://addons/godot-xr-tools/interactables/interactable_slider.gd" id="1_erqyi"]
+[ext_resource type="PackedScene" uid="uid://c4o6p8w1l6t2n" path="res://mk3/Assets/vanity_drawer.glb" id="2_d215k"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="3_mepvx"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="4_olnii"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wkre0"]
+size = Vector3(0.519104, 0.11328125, 0.54589844)
+
+[node name="InteractableSlider" type="Node3D"]
+script = ExtResource("1_erqyi")
+slider_limit_min = 5.0
+slider_limit_max = 5.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11605835, 0.021972656, 0.26123047)
+shape = SubResource("BoxShape3D_wkre0")
+
+[node name="vanity_drawer" parent="." instance=ExtResource("2_d215k")]
+transform = Transform3D(-2.4915492e-08, 0, 0.57, 0, 0.57, 0, -0.57, 0, -2.4915492e-08, 0, 0, 0)
+
+[node name="GrabPointHandLeft" parent="." instance=ExtResource("3_mepvx")]
+transform = Transform3D(-0.91144633, 1.4110098e-08, 0.41141877, -0.012155011, 0.9995634, -0.026927888, -0.4112392, -0.02954413, -0.91104835, 0.1423405, 0.038001567, 0.035226375)
+
+[node name="GrabPointHandRight" parent="." instance=ExtResource("4_olnii")]
+transform = Transform3D(-0.939955, 0, -0.3412985, 0, 1, 0, 0.3412985, 0, -0.939955, 0.08373373, 0.035372727, 0.039503187)
