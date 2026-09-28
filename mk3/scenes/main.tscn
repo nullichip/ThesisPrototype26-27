@@ -21,7 +21,7 @@ transform = Transform3D(1.35, 0, 0, 0, 1.35, 0, 0, 0, 1.35, 0, 0, 0)
 transform = Transform3D(0.024, 0, 0, 0, 0.024, 0, 0, 0, 0.024, -0.16660011, 2.35677, 0.22243427)
 
 [node name="MHA_MANGA" parent="." instance=ExtResource("5_k3r4r")]
-transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, -0.19027603, 2.008876, 0.5470471)
+transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, -0.16648793, 2.008876, 0.5470471)
 
 [node name="LOTION" parent="." instance=ExtResource("6_d2f76")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 1.0157695, 1.3307878, 3.1741102)
