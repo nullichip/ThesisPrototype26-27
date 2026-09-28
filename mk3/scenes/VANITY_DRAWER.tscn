@@ -10,6 +10,7 @@ size = Vector3(0.519104, 0.11328125, 0.54589844)
 
 [node name="InteractableSlider" type="Node3D"]
 script = ExtResource("1_erqyi")
+default_on_release = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11605835, 0.021972656, 0.26123047)

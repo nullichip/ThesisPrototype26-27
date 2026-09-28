@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="4_gqwug"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l2yo4"]
-size = Vector3(0.8009033, 10.661163, 6.931061)
+size = Vector3(0.03202474, 0.26323897, 0.16998406)
 
 [node name="MHA_MANGA" type="RigidBody3D"]
 collision_layer = 4
@@ -15,7 +15,7 @@ freeze_mode = 1
 script = ExtResource("1_pg17p")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0063815415, 0.0014447272, 0.0018943325)
 shape = SubResource("BoxShape3D_l2yo4")
 
 [node name="mha manga" parent="." instance=ExtResource("2_j6hgs")]
