@@ -28,4 +28,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17178184, 2.0145605, 0.548
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0157695, 1.3307878, 3.1741102)
 
 [node name="VANITY DRAWER" parent="." instance=ExtResource("7_k3r4r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2001857, 0.82274926, 3.0367758)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2080882, 0.8207704, 3.0414205)
+slider_limit_min = 2.0
+slider_limit_max = 3.0
