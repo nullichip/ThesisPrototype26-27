@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://boi0uijc0jbug"]
+[gd_scene load_steps=8 format=3 uid="uid://boi0uijc0jbug"]
 
 [ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="1_ylqe1"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="2_4ixdo"]
 [ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="2_ry4la"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="4_ubqr3"]
+[ext_resource type="Script" uid="uid://ck4yn3hxuobj7" path="res://addons/godot-xr-tools/player/player_body.gd" id="5_a3onm"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_03bhy"]
+radius = 0.039533343
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xficr"]
+radius = 0.053978834
 
 [node name="XROrigin3D" type="XROrigin3D"]
 
@@ -12,7 +21,36 @@ tracker = &"left_hand"
 
 [node name="LeftHand2" parent="LeftHand" instance=ExtResource("1_ylqe1")]
 
+[node name="RigidBody3D" type="RigidBody3D" parent="LeftHand"]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LeftHand"]
+transform = Transform3D(0.2266706, 0, 0, 0, 0.99182105, 0, 0, 0, 1.5705019, 0.009257406, 0.0069801807, 0.018405695)
+shape = SubResource("SphereShape3D_03bhy")
+
+[node name="MovementDirect" parent="LeftHand" instance=ExtResource("2_4ixdo")]
+strafe = true
+
 [node name="RightHand" type="XRController3D" parent="."]
 tracker = &"right_hand"
 
 [node name="RightHand" parent="RightHand" instance=ExtResource("2_ry4la")]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="RightHand"]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RightHand"]
+transform = Transform3D(0.2808013, 0, 0, 0, 0.76637673, 0, 0, 0, 1.1840576, 0, 0, 0.027113972)
+shape = SubResource("SphereShape3D_xficr")
+
+[node name="MovementDirect" parent="RightHand" instance=ExtResource("2_4ixdo")]
+strafe = true
+
+[node name="PlayerBody" type="CharacterBody3D" parent="." groups=["player_body"] instance=ExtResource("4_ubqr3")]
+process_priority = -100
+process_physics_priority = -100
+collision_layer = 524288
+collision_mask = 1023
+script = ExtResource("5_a3onm")

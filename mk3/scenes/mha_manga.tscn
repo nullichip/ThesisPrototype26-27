@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfj0hqvi7rrk1"]
+
+[ext_resource type="Script" uid="uid://bfrlpbsqg5lqr" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_pg17p"]
+[ext_resource type="PackedScene" uid="uid://ckbia1p5uq1d2" path="res://mk3/Assets/mha manga.glb" id="2_j6hgs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l2yo4"]
+size = Vector3(0.8009033, 10.661163, 6.931061)
+
+[node name="MHA_MANGA" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 196615
+freeze_mode = 1
+script = ExtResource("1_pg17p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.902771, 0.0065460205, -0.77937317)
+shape = SubResource("BoxShape3D_l2yo4")
+
+[node name="mha manga" parent="." instance=ExtResource("2_j6hgs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9040443, 0, -0.77955866)

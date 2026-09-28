@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bngpi67fli8d5"]
+
+[ext_resource type="Script" uid="uid://bfrlpbsqg5lqr" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_o881w"]
+[ext_resource type="PackedScene" uid="uid://cnl6ie3mslx2e" path="res://mk3/Assets/lotion.glb" id="2_j2wuv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x7guy"]
+size = Vector3(0.4885254, 1.1075745, 0.29466248)
+
+[node name="LOTION" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 196615
+freeze_mode = 1
+script = ExtResource("1_o881w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1542821, -0.8639736, -0.003787011)
+shape = SubResource("BoxShape3D_x7guy")
+
+[node name="lotion" parent="." instance=ExtResource("2_j2wuv")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
